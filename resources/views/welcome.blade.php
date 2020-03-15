@@ -94,6 +94,14 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+                <p> <?php 
+                try 
+                {
+                    DB::connection()->getPdo();
+                } catch (\Exception $e) {
+                    die("Could not connect to the database.  Please check your configuration. error:" . $e );
+                } 
+                ?></p>
             </div>
         </div>
     </body>
