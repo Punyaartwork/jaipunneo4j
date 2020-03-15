@@ -95,7 +95,7 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
                 <p> <?php 
-    $pdo = \DB::connection()->getPdo();
+    $pdo = DB::connection()->getPdo();
     if($pdo)
        {
          echo "Connected successfully to database ".DB::connection()->getDatabaseName();
