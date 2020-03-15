@@ -95,12 +95,13 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
                 <p> <?php 
-                try 
-                {
-                    DB::connection()->getPdo();
-                } catch (\Exception $e) {
-                    die("Could not connect to the database.  Please check your configuration. error:" . $e );
-                } 
+    $pdo = \DB::connection()->getPdo();
+    if($pdo)
+       {
+         echo "Connected successfully to database ".DB::connection()->getDatabaseName();
+       } else {
+         echo "You are not connected to database";
+    }
                 ?></p>
             </div>
         </div>
